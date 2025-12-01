@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import cors from 'cors';
 import { routes } from './routes.js';
 import 'dotenv/config';
 
@@ -17,6 +18,9 @@ try {
 } catch (err) {
     console.log(`Cannot connect to DB ${err.message}`);
 }
+
+// Add Cors
+app.use(cors());
 
 // Add body parser if we need to
 //app.use(express.urlencoded({ extended: false}));
