@@ -31,6 +31,7 @@
  - [x] Use env variables `npm i dotenv`
  - [x] Install jsonwebtoke `npm i jsonwebtoken`
  - [x] Generate token
+ - [x] Return the result in Json format
 
  - [x] Add Cors To API `npm i cors`
  - [x] Setup Cors

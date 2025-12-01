@@ -10,12 +10,12 @@ userController.post('/login', async (req, res) => {
     try {
         const token = await userService.login(email, password);
 
-        res.send(token)
+        res.send(JSON.stringify(token));
 
     } catch (err) {
         const errorMessage = getErrorMessage(err);
 
-        res.status(400).send({
+        res.status(404).send({
             error: errorMessage,
         });
     }
@@ -27,11 +27,11 @@ userController.post('/register', async (req, res) => {
     try {
         const token = await userService.register(email, password, rePassword);
 
-        res.send(token)
+        res.send(JSON.stringify(token));
     } catch (err) {
         const errorMessage = getErrorMessage(err);
 
-        res.status(400).send({
+        res.status(404).send({
             error: errorMessage,
         });
     }
