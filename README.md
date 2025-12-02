@@ -23,7 +23,7 @@
  - [x] Add user model
 
  ## 4. Register / Login / Logout
- - [x] Add user controller
+ - [x] Create user controller
  - [x] Add user controller to routes
  - [x] Create user service
  - [x] Instal bcrypt `npm i bcrypt`
@@ -37,3 +37,9 @@
  - [x] Setup Cors
 
  - [x] Adding email and ID to server response during login and registration
+
+ ## 5. Blog
+ - [x] Create blog models
+ - [x] Create blog controller
+ - [x] Add blog controller  to routes
+ - [x] Create blog service
