@@ -35,3 +35,5 @@
 
  - [x] Add Cors To API `npm i cors`
  - [x] Setup Cors
+
+ - [x] Adding email and ID to server response during login and registration

@@ -16,7 +16,11 @@ export default {
 
         const user = await User.create({ email, password });
 
-        return generateUserToken(user);
+        return {
+            email: user.email, 
+            _id: user._id,
+            accessToken: generateUserToken(user),
+        };
     },
     async login(email, password) {
         const user = await User.findOne({ email });
@@ -31,6 +35,10 @@ export default {
             throw new Error('Invaid user or password!');
         }
 
-        return generateUserToken(user);
+        return {
+            email: user.email, 
+            _id: user._id,
+            accessToken: generateUserToken(user),
+        };
     }
 }
