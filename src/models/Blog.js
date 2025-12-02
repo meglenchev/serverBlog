@@ -21,6 +21,9 @@ const blogSchema = new Schema({
         required: [true, 'Blog Category is required!'],
         minLength: [3, 'Blog Category shold be at least 3 characters long!']
     }, 
+    date: {
+        type: String
+    },
     owner: { // Single Relation Property
         type: Types.ObjectId,
         ref: 'User', 

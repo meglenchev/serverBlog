@@ -1,9 +1,10 @@
 import { Blog } from "../models/Blog.js"
 
 export default {
-    create(blogData, ownerId) {
+    create(blogData) {
         return Blog.create({
             ...blogData,
+            date: Date.now(),
             owner: ownerId,
         });
     },

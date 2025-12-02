@@ -10,11 +10,12 @@ blogController.get('/blog', async (req, res) => {
     res.send(JSON.stringify(blogs))
 });
 
-blogController.get('/:blogId/details', async (req, res) => {
+blogController.get('/blog/:blogId/details', async (req, res) => {
     const blogId = req.params.blogId;
 
     try {
-        const blog = await blogServices.getOne(blogId).populate('owner');
+        // const blog = await blogServices.getOne(blogId).populate('owner');
+        const blog = await blogServices.getOne(blogId);
 
         res.send(JSON.stringify(blog));
 
@@ -23,7 +24,7 @@ blogController.get('/:blogId/details', async (req, res) => {
     }
 });
 
-blogController.get('/:blogId/edit', async (req, res) => {
+blogController.get('/blog/:blogId/edit', async (req, res) => {
     const blogId = req.params.blogId;
 
     try {
@@ -35,7 +36,7 @@ blogController.get('/:blogId/edit', async (req, res) => {
     }
 });
 
-blogController.post('/:blogId/edit', async (req, res) => {
+blogController.post('/blog/:blogId/edit', async (req, res) => {
     const blogId = req.params.blogId;
     const blogData = req.body;
 
@@ -71,10 +72,10 @@ blogController.post('/blog/create', async (req, res) => {
     }
 });
 
-blogController.get('/:blogId/delete', async (req, res) => {
+blogController.get('/blog/:blogId/delete', async (req, res) => {
     const blogId = req.params.blogId;
 
-    const blog = await blogService.getOne(blogId);
+    const blog = await blogServices.getOne(blogId);
 
     await blogServices.delete(blogId);
 
